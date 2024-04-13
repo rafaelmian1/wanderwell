@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+    app:
+        environment:
+            - DATABASE_PROVIDER=postgres
+            - POSTGRES_URI=postgres://postgres:postgres@postgres:5432/postgres
+        depends_on:
+            - postgres
+    postgres:
+        container_name: 'ww-postgres'
+        image: 'postgres'
+        environment:
+            - POSTGRES_PASSWORD=postgres
+        volumes:
+            - ./lib/pg/dump:/dump
