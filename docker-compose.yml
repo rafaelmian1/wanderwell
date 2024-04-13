@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+    app:
+        container_name: 'ww-app'
+        build: .
+        ports:
+            - '3000:3000'
+        environment:
+            - MONGODB_URI=mongodb://mongo/wanderwell
+        volumes:
+            - .:/app
+            - /app/node_modules
+            - /app/.next
+        depends_on:
+            - mongo
+    mongo:
+        container_name: 'ww-mongo'
+        image: 'mongo'
+        volumes:
+            - ./dump:/dump
