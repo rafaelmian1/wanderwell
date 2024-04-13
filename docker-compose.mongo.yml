@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+    app:
+        environment:
+            - DATABASE_PROVIDER=mongo
+            - MONGODB_URI=mongodb://mongo/wanderwell
+        depends_on:
+            - mongo
+    mongo:
+        container_name: 'ww-mongo'
+        image: 'mongo'
+        volumes:
+            - ./lib/mongo/dump:/dump

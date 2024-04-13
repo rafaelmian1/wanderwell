@@ -1,0 +1,57 @@
+{
+    "id": "f5dd8da9-0d4b-41d1-9440-5f2f03ac5372",
+    "prevId": "00000000-0000-0000-0000-000000000000",
+    "version": "7",
+    "dialect": "postgresql",
+    "tables": {
+        "public.travels": {
+            "name": "travels",
+            "schema": "",
+            "columns": {
+                "id": {
+                    "name": "id",
+                    "type": "uuid",
+                    "primaryKey": true,
+                    "notNull": true,
+                    "default": "gen_random_uuid()"
+                },
+                "name": {
+                    "name": "name",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "description": {
+                    "name": "description",
+                    "type": "varchar(256)",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "startDate": {
+                    "name": "startDate",
+                    "type": "date",
+                    "primaryKey": false,
+                    "notNull": false
+                },
+                "endDate": {
+                    "name": "endDate",
+                    "type": "date",
+                    "primaryKey": false,
+                    "notNull": false
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {},
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        }
+    },
+    "enums": {},
+    "schemas": {},
+    "sequences": {},
+    "_meta": {
+        "columns": {},
+        "schemas": {},
+        "tables": {}
+    }
+}
